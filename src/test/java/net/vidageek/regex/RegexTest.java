@@ -16,4 +16,8 @@ final public class RegexTest {
         Assert.assertEquals(regex, new Regex(regex).asString());
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testThatThrowsExceptionIfRegexDoesNotCompile() {
+        new Regex("ab(");
+    }
 }

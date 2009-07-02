@@ -12,6 +12,6 @@ final public class Parser {
     }
 
     public String parse() {
-        return regex.asString();
+        return regex.generateMatchingWord();
     }
 }
