@@ -1,0 +1,27 @@
+package net.vidageek.regex;
+
+import java.util.List;
+
+import junit.framework.Assert;
+import net.vidageek.regex.token.SimpleCharToken;
+
+import org.junit.Before;
+import org.junit.Test;
+
+final public class RegexTokenizerTest {
+
+    private RegexTokenizer tokenizer;
+
+    @Before
+    public void setup() {
+        tokenizer = new RegexTokenizer();
+    }
+
+    @Test
+    public void testThatTokenizesSimpleChar() {
+        List<RegexToken> list = tokenizer.tokenize("a");
+        Assert.assertEquals(1, list.size());
+        Assert.assertEquals(SimpleCharToken.class, list.get(0).getClass());
+    }
+
+}
